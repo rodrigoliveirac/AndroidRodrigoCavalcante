@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/MenuMainFragment">
+
+    <fragment
+        android:id="@+id/MenuMainFragment"
+        android:name="com.rodcollab.androidrodrigocavalcante.MenuMainFragment"
+        android:label="maxApp"
+        tools:layout="@layout/fragment_menu_main">
+        <action
+            android:id="@+id/action_menuMain_to_clientInfo"
+            app:destination="@id/ClientInfoFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ClientInfoFragment"
+        android:name="com.rodcollab.androidrodrigocavalcante.ClientInfoFragment"
+        android:label="Dados do cliente"
+        tools:layout="@layout/fragment_menu_main">
+    </fragment>
+
+</navigation>
