@@ -1,6 +1,8 @@
-package com.rodcollab.androidrodrigocavalcante.ui
+package com.rodcollab.androidrodrigocavalcante.ui.client
 
+import android.content.Context
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,11 +10,12 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
-import com.rodcollab.androidrodrigocavalcante.ui.adapter.ContactsAdapter
-import com.rodcollab.androidrodrigocavalcante.utils.DateUtils
 import com.rodcollab.androidrodrigocavalcante.R
 import com.rodcollab.androidrodrigocavalcante.databinding.FragmentClientInfoBinding
+import com.rodcollab.androidrodrigocavalcante.ui.adapter.ContactsAdapter
+import com.rodcollab.androidrodrigocavalcante.utils.DateUtils
 import dagger.hilt.android.AndroidEntryPoint
+
 
 @AndroidEntryPoint
 class ClientInfoFragment : Fragment() {
@@ -57,18 +60,25 @@ class ClientInfoFragment : Fragment() {
                     adapter.updateContacts(client.contatos.toList())
                     binding.buttonShowStatus.setOnClickListener {
 
-                        Snackbar
-                            .make(view, "${DateUtils().currentDateAndTime} Status ${client.status}", Snackbar.LENGTH_SHORT)
-                            .setAction("FECHAR") { }
+                        val snackbar = Snackbar
+                            .make(binding.root, "${DateUtils().currentDateAndTime} Status ${client.status}", Snackbar.LENGTH_SHORT)
+                        val snackBarView = snackbar.view
+                        snackBarView.translationY = -convertDpToPixel(48f, requireContext())
+                        snackbar.setAction("FECHAR") { }
                             .setActionTextColor(requireContext().getColor(R.color.text_status))
                             .show()
                     }
                 }
         }
+
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+}
+
+fun convertDpToPixel(dp: Float, context: Context): Float {
+    return dp * (context.resources.displayMetrics.densityDpi.toFloat() / DisplayMetrics.DENSITY_DEFAULT)
 }
