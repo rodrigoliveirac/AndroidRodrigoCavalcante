@@ -42,6 +42,7 @@
                 android:layout_marginEnd="4dp"
                 android:textSize="10sp"
                 android:textColor="@color/text_label"
+                android:text="Telefone:"
                 tools:text="Telefone:"
                 />
             <TextView
@@ -76,6 +77,7 @@
                 android:layout_marginEnd="4dp"
                 android:textSize="10sp"
                 android:textColor="@color/text_label"
+                android:text="Celular:"
                 tools:text="Celular:"
                 />
             <TextView
@@ -110,6 +112,7 @@
                 android:layout_marginEnd="4dp"
                 android:textSize="10sp"
                 android:textColor="@color/text_label"
+                android:text="Cônjuge:"
                 tools:text="Cônjuge:"
                 />
             <TextView
@@ -136,6 +139,7 @@
                 android:layout_marginEnd="4dp"
                 android:textSize="10sp"
                 android:textColor="@color/text_label"
+                android:text="Tipo:"
                 tools:text="Tipo:"
                 />
             <TextView
@@ -161,6 +165,7 @@
                 android:layout_marginEnd="4dp"
                 android:textSize="10sp"
                 android:textColor="@color/text_label"
+                android:text="Hobbie:"
                 tools:text="Hobbie:"
                 />
             <TextView
@@ -199,6 +204,7 @@
                 android:layout_marginEnd="4dp"
                 android:textSize="10sp"
                 android:textColor="@color/text_label"
+                android:text="Email:"
                 tools:text="Email:"
                 />
             <TextView
@@ -233,6 +239,7 @@
                 android:layout_marginEnd="4dp"
                 android:textSize="10sp"
                 android:textColor="@color/text_label"
+                android:text="Data Nasc.:"
                 tools:text="Data Nasc.:"
                 />
             <TextView
@@ -258,6 +265,7 @@
                 android:layout_marginEnd="4dp"
                 android:textSize="10sp"
                 android:textColor="@color/text_label"
+                android:text="Data Nasc. Cônjuge:"
                 tools:text="Data Nasc. Cônjuge:"
                 />
             <TextView
@@ -283,6 +291,7 @@
                 android:layout_marginEnd="4dp"
                 android:textSize="10sp"
                 android:textColor="@color/text_label"
+                android:text="Time:"
                 tools:text="Time:"
                 />
             <TextView

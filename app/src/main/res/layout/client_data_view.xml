@@ -63,6 +63,7 @@
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="8dp"
                 android:textColor="@color/text_label"
+                android:text="CNPJ:"
                 tools:text="CNPJ:"
                  />
             <TextView
@@ -87,6 +88,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:textColor="@color/text_label"
+                android:text="Ramo de atividade:"
                 tools:text="Ramo de atividade:"
                 />
             <TextView
@@ -110,7 +112,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:textColor="@color/text_label"
-                tools:text="Endereços: "
+                android:text="Endereços:"
+                tools:text="Endereços:"
                 />
             <TextView
                 android:id="@+id/address"

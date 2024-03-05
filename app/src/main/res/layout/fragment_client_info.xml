@@ -26,6 +26,7 @@
         app:layout_constraintTop_toBottomOf="@id/data_client" />
 
     <Button
+        android:id="@+id/button_show_status"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_marginStart="4dp"
         android:layout_marginEnd="4dp"
