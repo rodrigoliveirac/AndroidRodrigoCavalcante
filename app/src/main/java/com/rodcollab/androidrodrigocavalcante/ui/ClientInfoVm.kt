@@ -1,9 +1,11 @@
-package com.rodcollab.androidrodrigocavalcante
+package com.rodcollab.androidrodrigocavalcante.ui
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.rodcollab.androidrodrigocavalcante.model.ClientData
+import com.rodcollab.androidrodrigocavalcante.network.MaxApi
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

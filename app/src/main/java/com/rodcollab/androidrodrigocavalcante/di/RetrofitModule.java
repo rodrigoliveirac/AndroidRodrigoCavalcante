@@ -1,4 +1,6 @@
-package com.rodcollab.androidrodrigocavalcante;
+package com.rodcollab.androidrodrigocavalcante.di;
+
+import com.rodcollab.androidrodrigocavalcante.network.MaxApi;
 
 import javax.inject.Singleton;
 

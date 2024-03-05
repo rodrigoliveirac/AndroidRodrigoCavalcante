@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/MenuMainFragment"
-        android:name="com.rodcollab.androidrodrigocavalcante.MenuMainFragment"
+        android:name="com.rodcollab.androidrodrigocavalcante.ui.MenuMainFragment"
         android:label="maxApp"
         tools:layout="@layout/fragment_menu_main">
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/ClientInfoFragment"
-        android:name="com.rodcollab.androidrodrigocavalcante.ClientInfoFragment"
+        android:name="com.rodcollab.androidrodrigocavalcante.ui.ClientInfoFragment"
         android:label="Dados do cliente"
         tools:layout="@layout/fragment_menu_main">
     </fragment>

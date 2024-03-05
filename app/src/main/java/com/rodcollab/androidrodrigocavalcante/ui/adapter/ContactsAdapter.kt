@@ -1,4 +1,4 @@
-package com.rodcollab.androidrodrigocavalcante
+package com.rodcollab.androidrodrigocavalcante.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.rodcollab.androidrodrigocavalcante.databinding.ItemContactBinding
+import com.rodcollab.androidrodrigocavalcante.model.Contact
 
 class ContactsAdapter(
 ) : RecyclerView.Adapter<ContactsAdapter.ViewHolder>() {

@@ -1,4 +1,4 @@
-package com.rodcollab.androidrodrigocavalcante
+package com.rodcollab.androidrodrigocavalcante.ui
 
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner

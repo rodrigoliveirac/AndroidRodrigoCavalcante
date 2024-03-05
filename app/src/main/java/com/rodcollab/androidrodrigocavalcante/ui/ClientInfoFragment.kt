@@ -1,4 +1,4 @@
-package com.rodcollab.androidrodrigocavalcante
+package com.rodcollab.androidrodrigocavalcante.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
+import com.rodcollab.androidrodrigocavalcante.ui.adapter.ContactsAdapter
+import com.rodcollab.androidrodrigocavalcante.utils.DateUtils
+import com.rodcollab.androidrodrigocavalcante.R
 import com.rodcollab.androidrodrigocavalcante.databinding.FragmentClientInfoBinding
 import dagger.hilt.android.AndroidEntryPoint
 
