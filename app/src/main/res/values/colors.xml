@@ -10,4 +10,14 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="background">#FFFFFF</color>
+    <color name="light_gray">#CCCCCC</color>
+
+<!-- DATA CLIENT -->
+    <color name="text">#000000</color>
+    <color name="text_label">#95989A</color>
+    <color name="text_corporateName">#606060</color>
+    <color name="text_phone">#186096</color>
+    <color name="text_email">#186096</color>
+    <color name="text_status">#638735</color>
+
 </resources>
