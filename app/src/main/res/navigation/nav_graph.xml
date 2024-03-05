@@ -17,9 +17,22 @@
 
     <fragment
         android:id="@+id/ClientInfoFragment"
-        android:name="com.rodcollab.androidrodrigocavalcante.ui.ClientInfoFragment"
+        android:name="com.rodcollab.androidrodrigocavalcante.ui.client.ClientInfoFragment"
         android:label="Dados do cliente"
         tools:layout="@layout/fragment_menu_main">
+        <action
+            android:id="@+id/action_clientInfo_to_ordersHistory"
+            app:destination="@id/OrdersHistoryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/OrdersHistoryFragment"
+        android:name="com.rodcollab.androidrodrigocavalcante.ui.orders.OrdersHistoryFragment"
+        android:label="Hist. de pedidos"
+        tools:layout="@layout/fragment_menu_main">
+        <action
+            android:id="@+id/action_clientInfo_to_ordersHistory"
+            app:destination="@id/OrdersHistoryFragment" />
     </fragment>
 
 </navigation>
