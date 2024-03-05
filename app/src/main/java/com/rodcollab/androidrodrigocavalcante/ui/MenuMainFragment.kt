@@ -25,6 +25,7 @@ class MenuMainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding.cardViewButtonClients.setOnClickListener {
             findNavController().navigate(R.id.action_menuMain_to_clientInfo)
         }
