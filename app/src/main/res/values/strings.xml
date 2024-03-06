@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">AndroidRodrigoCavalcante</string>
+    <string name="client_data_title">Dados do cliente</string>
+    <string name="contacts_title">Contatos</string>
+    <string name="verify_status_client_description_button">Verificar status do cliente</string>
 </resources>
