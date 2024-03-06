@@ -6,12 +6,12 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <ImageView
+        android:id="@+id/ic_legenda"
         android:layout_width="16dp"
         android:layout_height="16dp"
         android:scaleType="centerCrop"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:src="@drawable/ic_maxima_legenda_corte"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,7 +19,7 @@ class OrdersHistoryVm @Inject constructor(private val maxApi:MaxApi): ViewModel(
 
     val uiState: MutableLiveData<OrdersHistoryUiState> by lazy { MutableLiveData(OrdersHistoryUiState()) }
 
-    init {
+    fun onResume() {
         viewModelScope.launch {
             val data = maxApi.getOrdersHistory()
             if(data?.isSuccessful == true){
@@ -28,5 +28,4 @@ class OrdersHistoryVm @Inject constructor(private val maxApi:MaxApi): ViewModel(
             }
         }
     }
-
 }

@@ -9,5 +9,5 @@ data class OrderHistory(
     val status: String,
     val critica: String,
     val tipo: String,
-    val legendas: ArrayList<String>
+    val legendas: ArrayList<String>?
 )

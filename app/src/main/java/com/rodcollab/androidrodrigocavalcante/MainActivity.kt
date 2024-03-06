@@ -1,8 +1,8 @@
 package com.rodcollab.androidrodrigocavalcante
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -10,6 +10,11 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.rodcollab.androidrodrigocavalcante.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
+import java.text.DateFormatSymbols
+import java.text.ParseException
+import java.text.SimpleDateFormat
+import java.util.Locale
+import java.util.TimeZone
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
