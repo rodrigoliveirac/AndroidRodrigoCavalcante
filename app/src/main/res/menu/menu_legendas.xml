@@ -3,6 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/search"
+        android:icon="@drawable/baseline_search_24"
+        android:title=""
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="ifRoom">
+    </item>
+
+    <item
         android:id="@+id/legendas_menu"
         android:icon="@drawable/baseline_more_vert_24"
         android:title="    "
