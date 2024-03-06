@@ -49,10 +49,15 @@ class OrdersHistoryAdapter(
             binding.codeAndClient.text = "${order.codigoCliente} - ${order.NOMECLIENTE}"
             binding.status.text = order.status
 
-            val ic_critica = when(order.critica) {
-                "SUCESSO" -> ContextCompat.getDrawable(binding.root.context, R.drawable.ic_maxima_critica_sucesso)
+            when(order.critica) {
+                "SUCESSO" -> {
+                    binding.imgCritica.setImageDrawable(ContextCompat.getDrawable(binding.root.context, R.drawable.ic_maxima_critica_sucesso))
+                }
+                "FALHA_PARCIAL" -> {
+                    binding.imgCritica.setImageDrawable(ContextCompat.getDrawable(binding.root.context, R.drawable.ic_maxima_critica_alerta))
+                }
                 else -> {
-                    ContextCompat.getDrawable(binding.root.context, R.drawable.ic_maxima_critica_alerta)
+                    binding.critica.visibility = View.INVISIBLE
                 }
             }
 
@@ -95,8 +100,6 @@ class OrdersHistoryAdapter(
                     binding.imgStatus.setImageDrawable(ContextCompat.getDrawable(binding.root.context,R.drawable.ic_maxima_em_processamento))
                 }
             }
-
-            binding.imgCritica.setImageDrawable(ic_critica)
         }
     }
 

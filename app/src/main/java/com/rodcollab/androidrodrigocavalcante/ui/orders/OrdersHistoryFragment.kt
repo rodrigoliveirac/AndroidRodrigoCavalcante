@@ -1,29 +1,21 @@
 package com.rodcollab.androidrodrigocavalcante.ui.orders
 
-import android.annotation.SuppressLint
-import android.content.res.ColorStateList
 import android.os.Bundle
+import android.view.ContextMenu
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.core.view.MenuHost
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.divider.MaterialDividerItemDecoration
-import com.google.android.material.snackbar.Snackbar
 import com.rodcollab.androidrodrigocavalcante.R
 import com.rodcollab.androidrodrigocavalcante.databinding.FragmentOrdersHistoryBinding
-import com.rodcollab.androidrodrigocavalcante.ui.adapter.ContactsAdapter
 import com.rodcollab.androidrodrigocavalcante.ui.adapter.OrdersHistoryAdapter
-import com.rodcollab.androidrodrigocavalcante.ui.client.ClientInfoLifecycleObserver
-import com.rodcollab.androidrodrigocavalcante.ui.client.ClientInfoVm
-import com.rodcollab.androidrodrigocavalcante.ui.client.convertDpToPixel
-import com.rodcollab.androidrodrigocavalcante.utils.DateUtils
 import dagger.hilt.android.AndroidEntryPoint
 
 class OrdersHistoryObserver(private val viewModel: OrdersHistoryVm):DefaultLifecycleObserver {
@@ -41,8 +33,6 @@ class OrdersHistoryFragment : Fragment() {
 
     private lateinit var viewModel:OrdersHistoryVm
     private lateinit var adapter:OrdersHistoryAdapter
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -73,8 +63,6 @@ class OrdersHistoryFragment : Fragment() {
             }
         }
 
-
-
     }
     private fun addingDividerDecoration() {
         val divider = MaterialDividerItemDecoration(requireContext(), LinearLayoutManager.VERTICAL)
@@ -90,7 +78,6 @@ class OrdersHistoryFragment : Fragment() {
 
         binding.rvOrdersHistory.addItemDecoration(divider)
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()
