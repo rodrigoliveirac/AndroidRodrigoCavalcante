@@ -6,8 +6,6 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.ListView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
@@ -16,6 +14,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.rodcollab.androidrodrigocavalcante.databinding.ActivityMainBinding
+import com.rodcollab.androidrodrigocavalcante.worker.ReminderNotificationWorker
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -30,6 +29,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        ReminderNotificationWorker.schedule(applicationContext)
         binding = ActivityMainBinding.inflate(layoutInflater)
         
         setContentView(binding.root)
