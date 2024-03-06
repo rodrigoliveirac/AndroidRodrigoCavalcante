@@ -46,7 +46,22 @@ class MainActivity : AppCompatActivity() {
             binding.bottomNavigationView.setOnItemSelectedListener { menuItem ->
                 when (menuItem.itemId) {
                     R.id.ordersHistory -> {
-                        navController.navigate(R.id.action_clientInfo_to_ordersHistory)
+                        when(navController.currentBackStackEntry?.destination?.id) {
+                            R.id.ClientInfoFragment -> {
+                                navController.navigate(R.id.action_clientInfo_to_ordersHistory)
+                            }
+                        }
+                        true
+                    }
+
+                    R.id.dados -> {
+
+                        when(navController.currentBackStackEntry?.destination?.id) {
+                            R.id.OrdersHistoryFragment -> {
+                                navController.navigate(R.id.action_ordersHistory_to_clientInfo)
+                            }
+
+                        }
                         true
                     }
 
@@ -59,7 +74,7 @@ class MainActivity : AppCompatActivity() {
             if (destination?.id == R.id.ClientInfoFragment) {
                 when (destination.id) {
                     R.id.ClientInfoFragment -> {
-                        binding.bottomNavigationView.menu.findItem(R.id.person).isChecked = true
+                        binding.bottomNavigationView.menu.findItem(R.id.dados).isChecked = true
                     }
 
                     R.id.OrdersHistoryFragment -> {
@@ -107,7 +122,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.legendas_dialog -> {
 
-            var closeButton: TextView
+            val closeButton: TextView
 
             val dialog = Dialog(this)
             dialog.setContentView(R.layout.legenda_dialog)
@@ -126,8 +141,6 @@ class MainActivity : AppCompatActivity() {
             true
         }
         else -> {
-            // If we got here, the user's action was not recognized.
-            // Invoke the superclass to handle it.
             super.onOptionsItemSelected(item)
         }
     }

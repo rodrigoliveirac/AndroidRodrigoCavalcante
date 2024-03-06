@@ -31,8 +31,11 @@
         android:label="Hist. de pedidos"
         tools:layout="@layout/fragment_menu_main">
         <action
-            android:id="@+id/action_clientInfo_to_ordersHistory"
-            app:destination="@id/OrdersHistoryFragment" />
+            android:id="@+id/action_ordersHistory_to_clientInfo"
+            app:destination="@id/ClientInfoFragment"
+            app:popUpTo="@id/ClientInfoFragment"
+            app:popUpToInclusive="true"
+            />
     </fragment>
 
 </navigation>
