@@ -195,7 +195,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom|center_horizontal"
                         android:layout_marginBottom="20dp"
-                        android:text="Clientes"
+                        android:text="Ferramentas"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
