@@ -15,17 +15,22 @@ import com.rodcollab.androidrodrigocavalcante.databinding.FragmentOrdersHistoryB
 import com.rodcollab.androidrodrigocavalcante.ui.adapter.ContactsAdapter
 import com.rodcollab.androidrodrigocavalcante.ui.client.ClientInfoLifecycleObserver
 import com.rodcollab.androidrodrigocavalcante.ui.client.ClientInfoVm
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class OrdersHistoryFragment : Fragment() {
 
     private var _binding: FragmentOrdersHistoryBinding? = null
 
     private val binding get() = _binding!!
 
+    private lateinit var viewModel:OrdersHistoryVm
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        viewModel = ViewModelProvider(this)[OrdersHistoryVm::class.java]
     }
 
     override fun onCreateView(
