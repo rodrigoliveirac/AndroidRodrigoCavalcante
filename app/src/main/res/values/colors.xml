@@ -18,4 +18,16 @@
     <color name="text_email">#186096</color>
     <color name="text_status">#638735</color>
 
+    <!-- STATUS DOS PEDIDOS -->
+    <color name="em_processamento">#95989A</color>
+    <color name="recusado">#FF9900</color>
+    <color name="pendente">#606060</color>
+    <color name="bloqueado">#3557AA</color>
+    <color name="liberado">#186096</color>
+    <color name="montado">#7FAA33</color>
+    <color name="faturado">#64863B</color>
+    <color name="cancelado">#E40613</color>
+    <color name="orcamento">#2D3E4E</color>
+
+
 </resources>
