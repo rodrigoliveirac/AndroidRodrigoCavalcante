@@ -50,6 +50,9 @@ class MainActivity : AppCompatActivity() {
                             R.id.ClientInfoFragment -> {
                                 navController.navigate(R.id.action_clientInfo_to_ordersHistory)
                             }
+                            R.id.AlvarasFragment -> {
+                                navController.navigate(R.id.action_alvaras_to_ordersHistory)
+                            }
                         }
                         true
                     }
@@ -60,27 +63,38 @@ class MainActivity : AppCompatActivity() {
                             R.id.OrdersHistoryFragment -> {
                                 navController.navigate(R.id.action_ordersHistory_to_clientInfo)
                             }
-
+                            R.id.AlvarasFragment -> {
+                                navController.navigate(R.id.action_alvaras_to_clientInfo)
+                            }
                         }
                         true
                     }
 
                     else -> {
-                        false
+                        when(navController.currentBackStackEntry?.destination?.id) {
+                            R.id.OrdersHistoryFragment -> {
+                                navController.navigate(R.id.action_ordersHistory_to_alvaras)
+                            }
+                            R.id.ClientInfoFragment -> {
+                                navController.navigate(R.id.action_clientInfo_to_alvaras)
+                            }
+                        }
+                        true
                     }
                 }
             }
 
-            if (destination?.id == R.id.ClientInfoFragment) {
-                when (destination.id) {
-                    R.id.ClientInfoFragment -> {
-                        binding.bottomNavigationView.menu.findItem(R.id.dados).isChecked = true
-                    }
-
-                    R.id.OrdersHistoryFragment -> {
-                        binding.bottomNavigationView.menu.findItem(R.id.ordersHistory).isChecked =
-                            true
-                    }
+            when (destination?.id) {
+                R.id.ClientInfoFragment -> {
+                    binding.bottomNavigationView.menu.findItem(R.id.dados).isChecked = true
+                }
+                R.id.OrdersHistoryFragment -> {
+                    binding.bottomNavigationView.menu.findItem(R.id.ordersHistory).isChecked =
+                        true
+                }
+                R.id.AlvarasFragment -> {
+                    binding.bottomNavigationView.menu.findItem(R.id.alvaras).isChecked =
+                        true
                 }
             }
 
@@ -122,7 +136,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.legendas_dialog -> {
 
-            val closeButton: TextView
+            val closeButton: TextView?
 
             val dialog = Dialog(this)
             dialog.setContentView(R.layout.legenda_dialog)

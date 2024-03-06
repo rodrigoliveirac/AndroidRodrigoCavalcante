@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_clientInfo_to_ordersHistory"
             app:destination="@id/OrdersHistoryFragment" />
+        <action
+            android:id="@+id/action_clientInfo_to_alvaras"
+            app:destination="@id/AlvarasFragment" />
     </fragment>
 
     <fragment
@@ -35,6 +38,27 @@
             app:destination="@id/ClientInfoFragment"
             app:popUpTo="@id/ClientInfoFragment"
             app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/action_ordersHistory_to_alvaras"
+            app:destination="@id/AlvarasFragment"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/AlvarasFragment"
+        android:name="com.rodcollab.androidrodrigocavalcante.ui.AlvarasFragment"
+        android:label="Alvarás"
+        tools:layout="@layout/fragment_menu_main">
+        <action
+            android:id="@+id/action_alvaras_to_clientInfo"
+            app:destination="@id/ClientInfoFragment"
+            app:popUpTo="@id/ClientInfoFragment"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/action_alvaras_to_ordersHistory"
+            app:destination="@id/OrdersHistoryFragment"
             />
     </fragment>
 
