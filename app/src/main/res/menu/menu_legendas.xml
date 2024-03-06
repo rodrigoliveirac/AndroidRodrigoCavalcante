@@ -9,7 +9,7 @@
         app:showAsAction="always">
         <menu>
             <item
-                android:id="@+id/action_add_contact"
+                android:id="@+id/legendas_dialog"
                 android:icon="@drawable/ic_legenda_campanha"
                 android:title="      Legendas"
                 app:showAsAction="collapseActionView" />

@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="26dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/legendas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/title_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:text="Legendas"
+            android:textSize="24sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/status_erp_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:layout_marginTop="4dp"
+            android:text="Status do pedido no ERP"
+            app:layout_constraintTop_toBottomOf="@id/title_dialog"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <LinearLayout
+            android:id="@+id/status_erp_firstRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp"
+            app:layout_constraintTop_toBottomOf="@id/status_erp_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/ic_legenda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <ImageView
+                    android:id="@+id/bg_status"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_circle" />
+
+                <ImageView
+                    android:id="@+id/img_status"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_maxima_em_processamento"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/status_legenda_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:text="Em processamento por parte do FV"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/status_erp_secondRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/status_erp_firstRow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/ic_legenda2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <ImageView
+                    android:id="@+id/bg_status2"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_centerInParent="true"
+                    android:backgroundTint="@color/recusado"
+                    android:background="@drawable/bg_circle"
+                    />
+
+                <TextView
+                    android:id="@+id/status_text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:textAllCaps="true"
+                    android:text="!"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/status_legenda_description2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:text="Pedido recusado pelo ERP"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/status_erp_thirdRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/status_erp_secondRow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/ic_legenda3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <ImageView
+                    android:id="@+id/bg_status3"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_centerInParent="true"
+                    android:backgroundTint="@color/pendente"
+                    android:background="@drawable/bg_circle"
+                    />
+
+                <TextView
+                    android:id="@+id/status_text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:textAllCaps="true"
+                    android:text="P"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/status_legenda_description3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:text="Posição no ERP Pendente"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/status_erp_fourthRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/status_erp_thirdRow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/ic_legenda4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <ImageView
+                    android:id="@+id/bg_status4"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_centerInParent="true"
+                    android:backgroundTint="@color/bloqueado"
+                    android:background="@drawable/bg_circle"
+                    />
+
+                <TextView
+                    android:id="@+id/status_text4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:textAllCaps="true"
+                    android:text="B"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/status_legenda_description4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:text="Posição no ERP Bloqueado"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/status_erp_fifthRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/status_erp_fourthRow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/ic_legenda5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <ImageView
+                    android:id="@+id/bg_status5"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_centerInParent="true"
+                    android:backgroundTint="@color/liberado"
+                    android:background="@drawable/bg_circle"
+                    />
+
+                <TextView
+                    android:id="@+id/status_text5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:textAllCaps="true"
+                    android:text="L"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/status_legenda_description5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:text="Posição no ERP Liberado"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/status_erp_sixthRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/status_erp_fifthRow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/ic_legenda6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <ImageView
+                    android:id="@+id/bg_status6"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_centerInParent="true"
+                    android:backgroundTint="@color/montado"
+                    android:background="@drawable/bg_circle"
+                    />
+
+                <TextView
+                    android:id="@+id/status_text6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:textAllCaps="true"
+                    android:text="M"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/status_legenda_description6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:text="Posição no ERP Montado"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/status_erp_seventhRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/status_erp_sixthRow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/ic_legenda7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <ImageView
+                    android:id="@+id/bg_status7"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_centerInParent="true"
+                    android:backgroundTint="@color/faturado"
+                    android:background="@drawable/bg_circle"
+                    />
+
+                <TextView
+                    android:id="@+id/status_text7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:textAllCaps="true"
+                    android:text="F"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/status_legenda_description7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:text="Posição no ERP Faturado"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/status_erp_eighthRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/status_erp_seventhRow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/ic_legenda8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <ImageView
+                    android:id="@+id/bg_status8"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_centerInParent="true"
+                    android:backgroundTint="@color/cancelado"
+                    android:background="@drawable/bg_circle"
+                    />
+
+                <TextView
+                    android:id="@+id/status_text8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:textAllCaps="true"
+                    android:text="C"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/status_legenda_description8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:text="Posição no ERP Cancelado"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/status_erp_ninthRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/status_erp_eighthRow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/ic_legenda9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <ImageView
+                    android:id="@+id/bg_status9"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_circle"
+                    android:backgroundTint="@color/orcamento" />
+
+                <TextView
+                    android:id="@+id/status_text9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:textAllCaps="true"
+                    android:text="O"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/status_legenda_description9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:text="Orçamento"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/critica_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:layout_marginTop="6dp"
+            android:text="Crítica"
+            app:layout_constraintTop_toBottomOf="@id/status_erp_ninthRow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+        <LinearLayout
+            android:id="@+id/critica_firstRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp"
+            app:layout_constraintTop_toBottomOf="@id/critica_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="6dp"
+                android:layout_gravity="center"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_maxima_aguardando_critica"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:text="Aguardando retorno do ERP"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/critica_secondRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/critica_firstRow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="6dp"
+                android:layout_gravity="center"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_maxima_critica_sucesso"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:text="Sucesso"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/critica_thirdRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="6dp"
+            app:layout_constraintTop_toBottomOf="@id/critica_secondRow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="8dp"
+                android:layout_gravity="center"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_maxima_critica_alerta"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:text="Falha parcial"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/critica_fourthRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="6dp"
+            app:layout_constraintTop_toBottomOf="@id/critica_thirdRow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                >
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_centerInParent="true"
+                    android:backgroundTint="#E40613"
+                    android:background="@drawable/bg_circle"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:padding="4dp"
+                    android:text="!"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:text="Falha total"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/legendas_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:layout_marginTop="4dp"
+            android:text="Legendas"
+            app:layout_constraintTop_toBottomOf="@id/critica_fourthRow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <LinearLayout
+            android:id="@+id/legendas_firstRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/legendas_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_gravity="center"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_maxima_legenda_corte"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:text="Pedido sofreu corte"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/legendas_secondRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/legendas_firstRow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="6dp"
+                android:layout_gravity="center"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_maxima_legenda_falta"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="12dp"
+                android:text="Pedido com falta"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/legendas_thirdRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/legendas_secondRow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="6dp"
+                android:layout_gravity="center"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_maxima_legenda_cancelamento"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="12dp"
+                android:text="Pedido cancelado"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/legendas_fourthRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/legendas_thirdRow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="6dp"
+                android:layout_gravity="center"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_maxima_legenda_devolucao"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="12dp"
+                android:text="Pedido com devolução"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/legendas_fifthRow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/legendas_fourthRow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="6dp"
+                android:layout_gravity="center"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_maxima_legenda_telemarketing"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="12dp"
+                android:text="Pedido feito pelo telemarketing"
+                />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/close_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FECHAR"
+        android:textSize="16sp"
+        android:clickable="true"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/text_status"
+        app:layout_constraintTop_toBottomOf="@id/legendas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+    />
+</androidx.constraintlayout.widget.ConstraintLayout>

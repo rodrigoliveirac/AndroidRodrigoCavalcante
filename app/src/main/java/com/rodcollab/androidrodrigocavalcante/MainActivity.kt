@@ -1,9 +1,14 @@
 package com.rodcollab.androidrodrigocavalcante
 
+import android.app.Dialog
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.ListView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -16,6 +21,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
@@ -99,7 +105,24 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
-        R.id.legendas_menu -> {
+        R.id.legendas_dialog -> {
+
+            var closeButton: TextView
+
+            val dialog = Dialog(this)
+            dialog.setContentView(R.layout.legenda_dialog)
+
+            dialog.window!!
+                .setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+            dialog.setCancelable(false)
+
+            closeButton = dialog.findViewById<TextView>(R.id.close_button)
+
+            closeButton.setOnClickListener {
+                dialog.dismiss()
+            }
+
+            dialog.show()
             true
         }
         else -> {
