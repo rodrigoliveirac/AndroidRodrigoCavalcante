@@ -1,12 +1,12 @@
 package com.rodcollab.androidrodrigocavalcante.ui.orders
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.rodcollab.androidrodrigocavalcante.model.OrderHistory
-import com.rodcollab.androidrodrigocavalcante.network.MaxApi
+import com.rodcollab.androidrodrigocavalcante.repository.OrdersHistoryRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -15,17 +15,16 @@ data class OrdersHistoryUiState(
 )
 
 @HiltViewModel
-class OrdersHistoryVm @Inject constructor(private val maxApi:MaxApi): ViewModel(){
+class OrdersHistoryVm @Inject constructor(private val repository: OrdersHistoryRepository): ViewModel(){
 
     val uiState: MutableLiveData<OrdersHistoryUiState> by lazy { MutableLiveData(OrdersHistoryUiState()) }
 
     fun onResume() {
         viewModelScope.launch {
-            val data = maxApi.getOrdersHistory()
-            if(data?.isSuccessful == true){
-                uiState.value = data.body()?.pedidos?.let { uiState.value?.copy(history = it) }
-                Log.d("pedidos_data", data.body()?.pedidos.toString())
-            }
+            val history = async {
+                repository.getOrdersHistory()
+            }.await()
+            uiState.value = uiState.value?.copy(history = history)
         }
     }
 }

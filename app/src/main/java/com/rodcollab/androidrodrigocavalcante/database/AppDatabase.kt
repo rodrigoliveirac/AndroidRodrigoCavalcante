@@ -5,11 +5,13 @@ import androidx.room.Database
 import androidx.room.Index
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import com.rodcollab.androidrodrigocavalcante.database.entity.ClientLocal
 import com.rodcollab.androidrodrigocavalcante.database.entity.ContactLocal
 import com.rodcollab.androidrodrigocavalcante.database.entity.OrderHistoryLocal
 
-@Database(entities = [ClientLocal::class, ContactLocal::class, OrderHistoryLocal::class], version = 1, exportSchema = false)
+@Database(entities = [ClientLocal::class, ContactLocal::class, OrderHistoryLocal::class], version = 2, exportSchema = false)
+@TypeConverters(LegendaTypeConverter::class)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun clientDao(): ClientDao
