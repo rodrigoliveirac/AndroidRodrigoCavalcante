@@ -1,6 +1,8 @@
 package com.rodcollab.androidrodrigocavalcante
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
@@ -10,11 +12,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.rodcollab.androidrodrigocavalcante.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
-import java.text.DateFormatSymbols
-import java.text.ParseException
-import java.text.SimpleDateFormat
-import java.util.Locale
-import java.util.TimeZone
+
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -22,10 +20,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
 
+    private var mMenu:Menu? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-
+        
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
         setupNavigation()
@@ -62,6 +62,12 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
+
+            if(mMenu != null && destination.id == R.id.OrdersHistoryFragment) {
+                onCreateOptionsMenu(mMenu)
+            } else {
+                invalidateOptionsMenu()
+            }
         }
 
     }
@@ -77,6 +83,32 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+
+        if(mMenu == null) {
+            mMenu = menu
+        }
+
+        when(navController.currentBackStackEntry?.destination?.id) {
+            R.id.OrdersHistoryFragment -> {
+                menuInflater.inflate(R.menu.menu_legendas, menu);
+            }
+        }
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        R.id.legendas_menu -> {
+            true
+        }
+        else -> {
+            // If we got here, the user's action was not recognized.
+            // Invoke the superclass to handle it.
+            super.onOptionsItemSelected(item)
+        }
+    }
+
     private fun setupNavigation() {
         navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(navController.graph)
@@ -88,4 +120,5 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
     }
+
 }
