@@ -1,6 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.AndroidRodrigoCavalcante" parent="Theme.Material3.DayNight">
+
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/primary_500</item>
         <item name="colorPrimaryVariant">@color/primary_700</item>
@@ -16,6 +17,7 @@
         <item name="colorOnSurfaceVariant">@color/primary_800</item>
         <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.App.MediumComponent</item>
         <item name="colorOutline">@color/primary_400</item>
+        <item name="android:windowBackground">@color/background</item>
 
     </style>
 
