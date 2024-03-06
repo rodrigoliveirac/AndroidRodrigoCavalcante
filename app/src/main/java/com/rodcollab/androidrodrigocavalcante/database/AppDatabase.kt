@@ -10,7 +10,7 @@ import com.rodcollab.androidrodrigocavalcante.database.entity.ClientLocal
 import com.rodcollab.androidrodrigocavalcante.database.entity.ContactLocal
 import com.rodcollab.androidrodrigocavalcante.database.entity.OrderHistoryLocal
 
-@Database(entities = [ClientLocal::class, ContactLocal::class, OrderHistoryLocal::class], version = 2, exportSchema = false)
+@Database(entities = [ClientLocal::class, ContactLocal::class, OrderHistoryLocal::class], version = 1, exportSchema = false)
 @TypeConverters(LegendaTypeConverter::class)
 abstract class AppDatabase : RoomDatabase() {
 
