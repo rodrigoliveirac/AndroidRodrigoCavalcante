@@ -1,4 +1,4 @@
-## Conceitos abordados e tecnologias utilizadas
+## Conceitos abordados e tecnologias utilizadas (Teste Técnico)
 
 - NotificationManager
 - WorkManager
